@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="WeatherLogic.js"></script>
+
+
+</head>
+<title>OpenWeather API v1</title>
+
+<body>
+<div class="heading center-align">
+    <p>Open Weather API</p>
+        
+</div>
+<div class="center-align">
+    <h2> Get Weather of Current Location @ <button onclick="getLocation()">Get</button></h2>
+    <p id="demo"></p>
+    <p id='result'></p>
+</div>
+
+<hr size="1" />
+<div class="center-align">
+
+    <table align="center">
+        <tr>
+            <td> <input type="radio" name="optionSelector" id="cityNameRadio" value="cityName"/> Search by <b>City Name</b> </td>
+            <td> <input type="radio" name="optionSelector" id="cityPinRadio" value="cityPin"/> Search by <b>City PinCode</b> </td>
+        </tr>
+        <tr>
+            <td> City PinCode : <input type="number" id="cityPinCodeTF" placeholder=" enter city pin "/> </td>
+            <td> City Name : <input type="text" id="cityNameTF" placeholder="  enter city name " /> </td>
+        </tr>
+        <tr rowspan="2">
+            <td colspan="2" align="center">
+                <button onclick="getWeatherReport()" id="weatherBtn" class="myButton myButton:hover myButton:active">Get Weather</button>
+            </td>
+            
+        </tr>
+
+    </table>
+    
+    
+    
+
+    
+</div>
+ 
+<hr size="1" />
+
+<p>&copy; 2017 &nbsp &nbsp &nbsp &nbsp  <b>Prashanth Dasari </b>| Programmer | <a href="www.twitter.com/dsrprashanth">Twitter</a></p>
+<hr size="1" />   
+</body>
+
+</html>
