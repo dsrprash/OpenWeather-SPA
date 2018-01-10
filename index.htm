@@ -1,5 +1,10 @@
 <html>
+
 <head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript" src="WeatherLogic.js"></script>
 
@@ -19,24 +24,30 @@
 </div>
 
 <hr size="1" />
-<div class="center-align">
+<div class="center-align container">
 
     <table align="center">
         <tr>
-            <td> <input type="radio" name="optionSelector" id="cityNameRadio" value="cityName"/> Search by <b>City Name</b> </td>
-            <td> <input type="radio" name="optionSelector" id="cityPinRadio" value="cityPin"/> Search by <b>City PinCode</b> </td>
+            <td> <input type="radio" name="optionSelector" id="cityNameRadio" value="cityName" onclick="changeHeadingToName()"/> Search by <b>City Name</b> </td>
+            <td></td>
+            <td> <input type="radio" name="optionSelector" id="cityPinRadio" value="cityPin" onclick="changeHeadingToPin()"/> Search by <b>City PinCode</b> </td>
         </tr>
+      
         <tr>
+           <!--
+                <br></br>
             <td> City PinCode : <input type="number" id="cityPinCodeTF" placeholder=" enter city pin "/> </td>
-            <td> City Name : <input type="text" id="cityNameTF" placeholder="  enter city name " /> </td>
+            <td></td>
+            <td> City Name : <input type="text" id="cityNameTF" placeholder="  enter city name " /> </td> 
+            -->
+           
+            <td colspan="2" align="center"> <p id="dynamicHeading">City ----- :  </p><input type="text" id="dynamicTF" placeholder=" Enter details "/> </td>
         </tr>
         <tr rowspan="2">
             <td colspan="2" align="center">
                 <button onclick="getWeatherReport()" id="weatherBtn" class="myButton myButton:hover myButton:active">Get Weather</button>
             </td>
-            
         </tr>
-
     </table>
     
     

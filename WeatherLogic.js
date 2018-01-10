@@ -28,8 +28,11 @@ function getWeatherReport(){
     }
 }
 
+/*
+This function is for fetching current devices location i.e., latitude, longitude and get weather report through openWeather API (open source)
+*/
 
-
+//start of logic for current location's weather details
 function getLocation(){
     var x = document.getElementById("demo");
     var lat,long,response;
@@ -45,7 +48,7 @@ function showPosition(position) {
     lat = position.coords.latitude;
     long = position.coords.longitude;
     
-    console.log('lat : '+ lat + ' llong : '+ long);
+    console.log('lat : '+ lat + ' long : '+ long);
     if(lat != null && long != null){
        url = 'http://api.openweathermap.org/data/2.5/weather?lat=' +
                   lat + '&lon=' + 
@@ -61,20 +64,27 @@ function showPosition(position) {
                         + " Country : <b>"+response.sys.country+"</b> <br>"
                         + " City : <b>"+ response.name+"</b> <br>";
     
-    
-    
     }
-
-
 }
-    
-    
 }
 
-
+//util function to build url as per needed
 function GetW(yourUrl){
     var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("GET",yourUrl,false);
     Httpreq.send(null);
     return Httpreq.responseText;          
+}
+
+
+//function to change the heading based the radio button selected!
+function changeHeadingToName(){
+    var dynamicHeading = document.getElementById("dynamicHeading");
+        dynamicHeading.innerHTML = "City Name :  ";
+}
+
+////function to change the heading based the radio button selected!
+function changeHeadingToPin(){
+   var dynamicHeading = document.getElementById("dynamicHeading");
+        dynamicHeading.innerHTML = "City Pin :  ";
 }
